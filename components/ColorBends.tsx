@@ -200,7 +200,7 @@ export default function ColorBends({
       antialias: false,
       powerPreference: "high-performance",
       alpha: true,
-    });
+    }) as THREE.WebGLRenderer;
     rendererRef.current = renderer;
     (renderer as any).outputColorSpace = (THREE as any).SRGBColorSpace;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
