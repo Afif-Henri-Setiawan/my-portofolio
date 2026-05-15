@@ -2,14 +2,54 @@ import Lanyard from "../Lanyard";
 
 export default function AboutUs() {
   return (
-    <div className="grid grid-cols-2 mt-32 border border-gray-300 rounded-lg px-8 gap-8 w-full h-150 relative z-0 overflow-hidden">
-      <div>
-        <h1 className="text-3xl font-bold mb-4">About Us</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci
-          magni ratione rem fugit atque veritatis quasi inventore accusantium
-          blanditiis.
-        </p>
+    <div className="grid grid-cols-3 mt-32 border border-gray-300 rounded-lg px-8 gap-8 w-full h-155 relative z-0 overflow-hidden">
+      <div className="flex flex-col mt-10 w-full col-span-2">
+        <h1 className="text-3xl font-bold mb-2">Tentang Saya</h1>
+        <div className="flex flex-col gap-4 mt-2">
+          <p>
+            Halo, saya Afif Henri Setiawan, seorang Frontend Developer yang saat ini sedang menempuh studi
+            Informatika di Universitas Amikom Purwokerto. Bagi saya, coding
+            bukan sekadar menyusun sintaks, melainkan seni membangun solusi
+            digital yang bermakna. Dalam keseharian, saya banyak mengeksplorasi
+            ekosistem Next.js dan TypeScript untuk menciptakan aplikasi web yang
+            skalabel, serta mengandalkan Flutter untuk menghadirkan pengalaman
+            mobile application yang mulus dan modern.
+          </p>
+          <p>
+            Fokus saya adalah menciptakan antarmuka yang tidak hanya estetik,
+            tetapi juga intuitif dan responsif. Saya percaya bahwa pengalaman
+            digital yang luar biasa lahir dari keseimbangan antara desain yang
+            presisi dan performa kode yang optimal.
+          </p>
+          <p>
+            Selain aspek teknis, saya sangat mengutamakan komunikasi yang
+            efektif dan kolaborasi tim dalam setiap proyek. Sebagai seorang
+            mahasiswa sekaligus pengembang, saya terbiasa melakukan manajemen
+            waktu dengan baik dan memiliki kemauan belajar yang tinggi untuk
+            beradaptasi dengan tren teknologi yang cepat berubah.
+          </p>
+        </div>
+        <div className="mt-6">
+          <h2>Pendidikan</h2>
+          <div className="flex items-center gap-4 mt-2 ">
+            <div className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
+              <div className="w-12 h-12 bg-amber-200"></div>
+              <div>
+                <p>Universitas Amikom Purwokerto</p>
+                <p>Informatika</p>
+                <p>2023 - Sekarang</p>
+              </div>
+            </div>
+            <div className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
+              <div className="w-12 h-12 bg-amber-200"></div>
+              <div>
+                <p>SMK N 1 Kutasari</p>
+                <p>Teknik Jaringan & Komputer</p>
+                <p>2020 - 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="">
         <Lanyard position={[0, 0, 22]} gravity={[0, -30, 0]} />
