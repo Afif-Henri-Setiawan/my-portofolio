@@ -17,7 +17,15 @@ import {
   RigidBodyProps,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { ReactThreeFiber } from "@react-three/fiber";
 import * as THREE from "three";
+
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    meshLineGeometry: any;
+    meshLineMaterial: any;
+  }
+}
 
 // replace with your own imports, see the usage snippet for details
 // import cardGLB from "/public/models/card.glb";
