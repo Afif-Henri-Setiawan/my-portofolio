@@ -10,14 +10,14 @@ import foto from "@/assets/images/my.png";
 
 export default function Header() {
   return (
-    <header id="home" className="grid grid-cols-2 pt-10">
-      <div>
-        <div className="flex items-center gap-4 border border-white/10 glass py-2 px-4 w-1/2 rounded-2xl">
+    <header id="home" className="grid grid-cols-1 lg:grid-cols-2 pt-10 gap-10 lg:gap-0">
+      <div className="">
+        <div className="flex items-center gap-4 border border-white/10 glass py-2 px-4 w-fit md:w-1/2 rounded-2xl">
           <div className="rounded-full bg-amber-300 h-8 w-8"></div>
           <p>Hi, I&apos;m Afif Henri Setiawan</p>
         </div>
         <ShinyText
-          className="text-white text-7xl font-bold mt-5 whitespace-pre-line"
+          className="text-white text-5xl md:text-7xl font-bold mt-5 whitespace-pre-line"
           text={`Frontend\nDevelopment`}
           speed={2}
           delay={0}
@@ -37,7 +37,7 @@ export default function Header() {
             menghadirkan pengalaman digital yang luar biasa untuk pengguna Anda.
           </p>
         </div>
-        <div className="flex gap-4 mt-6">
+        <div className="flex flex-col md:flex-row gap-4 mt-6">
           <Button className="glass py-6 px-10 rounded-xl cursor-pointer text-md border border-white/10 shadow-2xl">
             Download CV <GoDownload />
           </Button>
@@ -45,7 +45,7 @@ export default function Header() {
             Lihat Portofolio <MdOutlineArrowOutward />
           </Button>
         </div>
-        <div className="flex items-center gap-3 mt-5">
+        <div className="flex items-center gap-3 mt-8 md:mt-5 justify-center lg:justify-start">
           <FaGithub className="text-3xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" />
           <FaLinkedin className="text-3xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" />
           <FaInstagram className="text-3xl transition-all duration-300 hover:-translate-y-1 cursor-pointer" />
