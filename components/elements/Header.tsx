@@ -38,10 +38,23 @@ export default function Header() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4 mt-6">
-          <Button className="glass py-6 px-10 rounded-xl cursor-pointer text-md border border-white/10 shadow-2xl">
+          <Button 
+            onClick={() => window.open('/document/CV_AFIF_HENRI_SETIAWAN.pdf', '_blank')}
+            className="glass py-6 px-10 rounded-xl cursor-pointer text-md border border-white/10 shadow-2xl"
+          >
             Download CV <GoDownload />
           </Button>
-          <Button className="glass py-6 px-10 rounded-xl cursor-pointer text-md border border-white/10 shadow-2xl">
+          <Button 
+            onClick={() => {
+              const projectSection = document.getElementById("projects");
+              if (projectSection) {
+                projectSection.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "#projects";
+              }
+            }}
+            className="glass py-6 px-10 rounded-xl cursor-pointer text-md border border-white/10 shadow-2xl"
+          >
             Lihat Portofolio <MdOutlineArrowOutward />
           </Button>
         </div>
