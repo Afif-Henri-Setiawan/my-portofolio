@@ -1,8 +1,10 @@
 import Lanyard from "../Lanyard";
-
+import Image from "next/image";
+import amikomLogo from "@/assets/images/amikom.png";
+import smkLogo from "@/assets/images/smk.png";
 export default function AboutUs() {
   return (
-    <div className="grid grid-cols-3 mt-32 border border-gray-300 rounded-lg px-8 gap-8 w-full h-155 relative z-0 overflow-hidden">
+    <div id="about" className="grid grid-cols-3 mt-32 border border-gray-300 rounded-lg px-8 gap-8 w-full h-155 relative z-0 overflow-hidden">
       <div className="flex flex-col mt-10 w-full col-span-2">
         <h1 className="text-3xl font-bold mb-2">Tentang Saya</h1>
         <div className="flex flex-col gap-4 mt-2">
@@ -33,7 +35,7 @@ export default function AboutUs() {
           <h2>Pendidikan</h2>
           <div className="flex items-center gap-4 mt-2 ">
             <div className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
-              <div className="w-12 h-12 bg-amber-200"></div>
+              <Image src={amikomLogo} alt="Amikom Purwokerto" className="w-12 h-12 object-contain" />
               <div>
                 <p>Universitas Amikom Purwokerto</p>
                 <p>Informatika</p>
@@ -41,7 +43,7 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
-              <div className="w-12 h-12 bg-amber-200"></div>
+              <Image src={smkLogo} alt="SMK N 1 Kutasari" className="w-12 h-12 object-contain" />
               <div>
                 <p>SMK N 1 Kutasari</p>
                 <p>Teknik Jaringan & Komputer</p>

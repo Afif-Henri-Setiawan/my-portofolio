@@ -77,7 +77,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   miniAvatarUrl,
   name = 'Afif Henri Setiawan',
   title = 'Software Engineer',
-  handle = 'javicodes',
+  handle = 'Afifhnrstwn',
   status = 'Online',
   contactText = 'Contact',
   showUserInfo = true,
@@ -518,7 +518,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               }}
             >
               <img
-                className="w-full absolute left-1/2 bottom-[-1px] will-change-transform transition-transform duration-[120ms] ease-out"
+                className="w-[125%] max-w-none absolute left-1/2 bottom-[-1px] will-change-transform transition-transform duration-[120ms] ease-out"
                 src={avatarUrl}
                 alt={`${name || 'User'} avatar`}
                 loading="lazy"

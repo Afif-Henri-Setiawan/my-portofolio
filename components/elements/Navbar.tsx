@@ -32,16 +32,16 @@ export default function Navbar() {
 
         <ul className="flex space-x-10 text-white">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="#home">Home</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="#about">About</Link>
           </li>
           <li>
-            <Link href="/projects">Project</Link>
+            <Link href="#projects">Project</Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="#contact">Contact</Link>
           </li>
         </ul>
       </nav>
@@ -64,16 +64,16 @@ export default function Navbar() {
       >
         <ul className="flex gap-6 text-white text-sm">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="#home">Home</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="#about">About</Link>
           </li>
           <li>
-            <Link href="/projects">Project</Link>
+            <Link href="#projects">Project</Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="#contact">Contact</Link>
           </li>
         </ul>
       </nav>

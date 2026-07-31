@@ -6,10 +6,11 @@ import { Button } from "../ui/button";
 import { GoDownload } from "react-icons/go";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import ShinyText from "../ShinyText";
+import foto from "@/assets/images/my.png";
 
 export default function Header() {
   return (
-    <header className="grid grid-cols-2 pt-10">
+    <header id="home" className="grid grid-cols-2 pt-10">
       <div>
         <div className="flex items-center gap-4 border border-white/10 glass py-2 px-4 w-1/2 rounded-2xl">
           <div className="rounded-full bg-amber-300 h-8 w-8"></div>
@@ -54,14 +55,19 @@ export default function Header() {
         <ProfileCard
           name="Afif Henri Setiawan"
           title="Software Engineer"
-          handle="javicodes"
+          handle="Afifhnrstwn"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/path/to/avatar.jpg"
-          showUserInfo={false}
+          avatarUrl={foto.src}
+          showUserInfo={true}
           enableTilt={true}
           enableMobileTilt={false}
-          onContactClick={() => console.log("Contact clicked")}
+          onContactClick={() => {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
           behindGlowColor="rgba(125, 190, 255, 0.67)"
           iconUrl="/assets/demo/iconpattern.png"
           behindGlowEnabled

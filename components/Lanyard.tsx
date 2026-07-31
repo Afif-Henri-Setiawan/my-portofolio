@@ -127,6 +127,16 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
 
   const { nodes, materials } = useGLTF("/models/card.glb") as any;
   const texture = useTexture("/textures/lanyard.png");
+  const cardTexture = useTexture("/foto.jpg");
+  
+  useEffect(() => {
+    if (cardTexture) {
+      cardTexture.flipY = false;
+      cardTexture.center.set(0.5, 0.5);
+      cardTexture.rotation = Math.PI;
+      cardTexture.needsUpdate = true;
+    }
+  }, [cardTexture]);
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([
@@ -260,7 +270,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
-                map={materials.base.map}
+                map={cardTexture}
                 map-anisotropy={16}
                 clearcoat={isMobile ? 0 : 1}
                 clearcoatRoughness={0.15}
@@ -277,9 +287,10 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
           </group>
         </RigidBody>
       </group>
+      
       <mesh ref={band}>
-        <MeshLineGeometry />
-        <MeshLineMaterial
+        <meshLineGeometry />
+        <meshLineMaterial
           color="white"
           depthTest={false}
           resolution={isMobile ? [1000, 2000] : [1000, 1000]}
