@@ -6,6 +6,7 @@ import {
   useTexture,
   Environment,
   Lightformer,
+  Decal
 } from "@react-three/drei";
 import {
   BallCollider,
@@ -136,15 +137,22 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
   const { nodes, materials } = useGLTF("/models/card.glb") as any;
   const texture = useTexture("/textures/lanyard.png");
   const cardTexture = useTexture("/foto.jpg");
+  const cardTextureBack = useTexture("/foto_back.jpg");
   
   useEffect(() => {
     if (cardTexture) {
       cardTexture.flipY = false;
       cardTexture.center.set(0.5, 0.5);
-      cardTexture.rotation = Math.PI;
+      cardTexture.rotation = 0;
       cardTexture.needsUpdate = true;
     }
-  }, [cardTexture]);
+    if (cardTextureBack) {
+      cardTextureBack.flipY = false;
+      cardTextureBack.center.set(0.5, 0.5);
+      cardTextureBack.rotation = 0;
+      cardTextureBack.needsUpdate = true;
+    }
+  }, [cardTexture, cardTextureBack]);
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([
@@ -285,6 +293,18 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
                 roughness={0.9}
                 metalness={0.8}
               />
+              <Decal position={[0, 0, -0.01]} rotation={[0, Math.PI, 0]} scale={[0.85, 1.2, 0.005]}>
+                <meshPhysicalMaterial
+                  map={cardTextureBack}
+                  map-anisotropy={16}
+                  clearcoat={isMobile ? 0 : 1}
+                  clearcoatRoughness={0.15}
+                  roughness={0.9}
+                  metalness={0.8}
+                  polygonOffset
+                  polygonOffsetFactor={-1}
+                />
+              </Decal>
             </mesh>
             <mesh
               geometry={nodes.clip.geometry}
